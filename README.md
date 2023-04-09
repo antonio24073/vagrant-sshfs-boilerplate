@@ -1,7 +1,7 @@
 
 # Vagrant and SSHFS Boilerplate
 
-This is a boilerplate project for the vagrant (VMs generator) with and libvirt. 
+This is a boilerplate project for the vagrant (VMs generator) and libvirt. 
 
 You can configure it to work with virtualbox in your fork.
 
