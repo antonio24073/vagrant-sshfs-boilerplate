@@ -10,9 +10,9 @@ Dependencies:
 - libvirt
 - virt-manager
 - fuse-sshfs (if you want to sync folders)
-Search for instalation in the internet.
+Search for installation in the internet.
 
-An example of Fedora instalation:
+An example of Fedora installation:
 
 ```
 sudo dnf install virt-manager libvirt-devel libxslt-devel libxml2-devel vagrant qemu-img vagrant-libvirt qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils fuse-sshfs -y
