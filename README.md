@@ -43,7 +43,13 @@ Don't forget to umount:
 
 ```
 ls -la
-umount projetc1
+umount project1
 umount name-of-your-folder
+```
+
+To remove all VMs
+
+```
+vagrant destroy
 ```
 

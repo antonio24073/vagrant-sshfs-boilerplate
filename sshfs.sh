@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ## sh sshfs.sh --help
-## sh sshfs.sh  --virtual-machine=alpine-1 --folder=project1
+## sh sshfs.sh --virtual-machine=alpine-1 --folder=project1
 ## sh sshfs.sh -vm=alpine-1 -f=project1
 
 for i in "$@"; do
@@ -13,8 +13,8 @@ for i in "$@"; do
       _VM="${i#*=}"
       ;;
     -h=*|--help=*)
-      echo "sh sshfs.sh --folder=project1"
-      echo "sh sshfs.sh -f=project1"
+      echo "sh sshfs.sh --virtual-machine=alpine-1 --folder=project1"
+      echo "sh sshfs.sh -vm=alpine-1 -f=project1"
       exit 1
       ;;
     -*|--*)

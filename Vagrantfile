@@ -8,7 +8,7 @@ vms = {
 	# 	'memory' => '512', 'cpus' => '1', 'ip' => '11', 'box' => 'ubuntu/xenial64', 'provision' => 'ubuntu-server.sh'
 	# },
 	'alpine' => {
-		'qty' => '2', 
+        'qty' => '2', 
         'memory' => '256', 
         'cpus' => '1', 
         'box' => 'generic/alpine312', 
