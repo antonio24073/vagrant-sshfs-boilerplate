@@ -1,15 +1,48 @@
 
-# Vagrant Boilerplate
+# Vagrant and SSHFS Boilerplate
 
+This is a VMs auto-generator with vagrant and libvirt. 
+You can configure it to work with virtualbox in your fork.
+You can specify multiple VMs at the same time.
 
+Dependencies:
+- vagrant
+- libvirt
+- virt-manager
+- fuse-sshfs (if you want to sync folders)
+Search for instalation in the internet.
 
+An example of Fedora instalation:
 
 ```
-FOLDER=${pwd} PREFIX=vm QTY=2 BOX=generic/alpine312 CPUS=1 MEMORY=256 vagrant up --debug
-FOLDER=${pwd} PREFIX=vm QTY=2 BOX=generic/alpine312 CPUS=1 MEMORY=256 vagrant destroy 
+sudo dnf install virt-manager libvirt-devel libxslt-devel libxml2-devel vagrant qemu-img vagrant-libvirt qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils fuse-sshfs -y
 ```
 
+
+## Steps:
+
+Configure your `Vagrantfile` and create your provision file  (sh) in the `provision` folder and run:
+
 ```
-sh vagrant.sh -p=vm -f=$(pwd) -b=generic/alpine317 -q=2 -m=256 -c=1 --debug
-sh vagrant.sh -p=vm -f=$(pwd) -b=generic/alpine317 -q=2 -m=256 -c=1 --destroy
+vagrant up --no-parallel
+vagrant up --no-parallel --debug
 ```
+
+To mount synced directory you can use:
+
+```
+vagrant status
+sh sshfs.sh  --virtual-machine=alpine-1 --folder=project1
+sh sshfs.sh -vm=alpine-1 -f=project1
+```
+
+It will generate a folder in the VM home folder.
+
+Not forget to umount:
+
+```
+ls -la
+umount projetc1
+umount name-of-your-folder
+```
+
