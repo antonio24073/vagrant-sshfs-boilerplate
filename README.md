@@ -1,14 +1,16 @@
 
 # Vagrant and SSHFS Boilerplate
 
-This is a VMs auto-generator with vagrant and libvirt. 
+This is a boilerplate project for the vagrant (VMs generator) with and libvirt. 
+
 You can configure it to work with virtualbox in your fork.
+
 You can specify multiple VMs at the same time.
 
 Dependencies:
 - vagrant
 - libvirt
-- virt-manager
+- virt-manager (if you want to view the VMs)
 - fuse-sshfs (if you want to sync folders)
 
 Search for installation in the internet.
