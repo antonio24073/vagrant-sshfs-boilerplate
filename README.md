@@ -10,6 +10,7 @@ Dependencies:
 - libvirt
 - virt-manager
 - fuse-sshfs (if you want to sync folders)
+
 Search for installation in the internet.
 
 An example of Fedora installation:
