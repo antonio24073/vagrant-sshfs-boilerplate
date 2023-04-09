@@ -38,7 +38,7 @@ sh sshfs.sh -vm=alpine-1 -f=project1
 
 It will generate a folder in the VM home folder.
 
-Not forget to umount:
+Don't forget to umount:
 
 ```
 ls -la
