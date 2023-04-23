@@ -1,5 +1,6 @@
 #!/bin/sh
 
+## how use this:
 ## sh sshfs.sh --help
 ## sh sshfs.sh --virtual-machine=alpine-1 --folder=project1
 ## sh sshfs.sh -vm=alpine-1 -f=project1
