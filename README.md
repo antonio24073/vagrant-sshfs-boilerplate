@@ -72,7 +72,7 @@ vagrant destroy
 
 ## Networks
 
-- To more advanced networks in the host, (search in youtube) you can use GUIs like:
+To more advanced networks in the host, (search in youtube) you can use GUIs like:
 
 ```
 nm-connection-editor
@@ -80,6 +80,23 @@ nm-connection-editor
 
 ------------------------------
 
+## Transform virtualbox boxes in libvirt boxes
+
+```
+vagrant box add ubuntu/focal64
+vagrant mutate ubuntu/focal64 libvirt
+vagrant box remove ubuntu/focal64 --provider=virtualbox
+```
+
+------------------------------
+
 Tested with `libvirt` and `virt-manager`
 
 Not tested with `virtualbox`
+
+------------------------------
+
+## Related projects:
+
+- [Vagrant WHM CPanel Local](https://github.com/antonio24073/vagrant-whm-cpanel-local)
+

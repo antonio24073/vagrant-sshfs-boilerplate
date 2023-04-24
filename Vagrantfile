@@ -23,7 +23,7 @@ vms = {
     #     'box' => 'almalinux/8',
     #     'provision' => 'almalinux-8.sh', 
     # },
-    'ubuntu' => {
+    'ubuntu-focal64' => {
         'qty' => 1, 
         'cpus' => 4,
         'memory' => 4,
@@ -57,7 +57,7 @@ vms.each do |name, conf|
                     lv.keymap = "pt-br"
                     lv.machine_arch = "x86_64"
                     lv.qemu_use_session = false
-                    lv.storage_pool_name = "mounted_storage" # you need create it in virt-manager
+                    # lv.storage_pool_name = "libvirt_storage" # you need create it in virt-manager
                 end
                 node.vm.box = conf['box']
                 node.vm.box_check_update = false
