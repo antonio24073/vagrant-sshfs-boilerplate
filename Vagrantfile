@@ -27,7 +27,7 @@ vms = {
         'qty' => 1, 
         'cpus' => 2,
         'memory' => 4,
-        'swap' => 4,
+        'swap' => 2,
         'box' => 'generic/ubuntu2004',
         'provision' => 'generic-ubuntu2004.sh',
     }

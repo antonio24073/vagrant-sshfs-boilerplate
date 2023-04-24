@@ -8,7 +8,10 @@
 for i in "$@"; do
   case $i in
     -f=*|--folder=*)
-      _FOLDER="${i#*=}"
+      _folder="${i#*=}"
+      ;;
+    -p=*|--path=*)
+      _path="${i#*=}"
       ;;
     -vm=*|--virtual-machine=*)
       _VM="${i#*=}"
@@ -27,8 +30,16 @@ done
 set -- "${POSITIONAL_ARGS[@]}" # restore positional parameters
 
 ip=$(vagrant ssh ${_VM} -c "ip address show eth0 | grep 'inet ' | sed -e 's/^.*inet //' -e 's/\/.*$//' | tr -d '\n'" 2>/dev/null)
-vagrant ssh ${_VM} -c "mkdir /home/vagrant/${_FOLDER}"
-mkdir "$(pwd)/${_FOLDER}"
-sshpass -p vagrant sshfs -o StrictHostKeyChecking=no,debug -f vagrant@$ip:"/home/vagrant/${_FOLDER}/" "$(pwd)/${_FOLDER}"
+
+if [ -z "$_path" ]
+then
+  vagrant ssh ${_VM} -c "mkdir /home/vagrant/${_folder}"
+  mkdir "$(pwd)/${_folder}"
+  sshpass -p vagrant sshfs -o StrictHostKeyChecking=no,debug -f vagrant@$ip:"/home/vagrant/${_folder}/" "$(pwd)/${_folder}"
+else
+  vagrant ssh ${_VM} -c "mkdir /home/vagrant/${_folder}"
+  mkdir "${_path}/${_folder}"
+  sshpass -p vagrant sshfs -o StrictHostKeyChecking=no,debug -f vagrant@$ip:"/home/vagrant/${_folder}/" "${_path}/${_folder}"
+fi
 exit 1
 

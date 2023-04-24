@@ -1,12 +1,23 @@
 
 Vagrant and SSHFS Boilerplate
-==============================
+=============================
 
 Create virtual machines automatically and sync your project folders.
 
 This is a boilerplate project for the vagrant and libvirt. 
 
 You can configure it to work with virtualbox in your fork.
+
+------------------------------
+
+## Provisions Examples:
+
+- Almalinux 8
+- Centos 7
+- Ubuntu Focal 20.04
+
+When I have a time I will make a provision to:
+- Alpine 3.17.2
 
 ------------------------------
 
@@ -44,11 +55,25 @@ To mount synced directory you can use:
 
 ```
 vagrant status
-sh sshfs.sh  --virtual-machine=alpine-1 --folder=project
+sh sshfs.sh --virtual-machine=alpine-1 --folder=project
 sh sshfs.sh -vm=alpine-1 -f=project
 ```
 
-It will generate a folder in the VM home folder.
+It will generate a folder in the VM home folder and another in your host current path (pwd).
+
+To mount a volume in another path, you can do:
+```
+vagrant status
+sh sshfs.sh --virtual-machine=alpine-1 --folder=project --path=/home/user/Documents
+sh sshfs.sh -vm=alpine-1 -f=project --p=/home/user/Documents
+```
+
+
+```
+vagrant status
+sh sshfs.sh  --virtual-machine=alpine-1 --folder=project
+sh sshfs.sh -vm=alpine-1 -f=project
+```
 
 Don't forget to umount:
 
@@ -87,7 +112,7 @@ vagrant box add ubuntu/focal64
 vagrant mutate ubuntu/focal64 libvirt
 vagrant box remove ubuntu/focal64 --provider=virtualbox
 ```
-But `ubuntu/focal64` not working in libvirt, I replace it with `generic/ubuntu2004`
+But `ubuntu/focal64` not working in libvirt, I replaced it with `generic/ubuntu2004`
 
 ------------------------------
 
