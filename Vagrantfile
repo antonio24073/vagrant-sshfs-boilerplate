@@ -23,13 +23,13 @@ vms = {
     #     'box' => 'almalinux/8',
     #     'provision' => 'almalinux-8.sh', 
     # },
-    'ubuntu-focal64' => {
+    'generic-ubuntu2004' => {
         'qty' => 1, 
-        'cpus' => 4,
+        'cpus' => 2,
         'memory' => 4,
         'swap' => 4,
-        'box' => 'ubuntu/focal64',
-        'provision' => 'ubuntu-focal64.sh',
+        'box' => 'generic/ubuntu2004',
+        'provision' => 'generic-ubuntu2004.sh',
     }
 }
 
@@ -57,6 +57,7 @@ vms.each do |name, conf|
                     lv.keymap = "pt-br"
                     lv.machine_arch = "x86_64"
                     lv.qemu_use_session = false
+                    lv.channel :type => 'unix', :target_name => 'org.qemu.guest_agent.0', :target_type => 'virtio'
                     # lv.storage_pool_name = "libvirt_storage" # you need create it in virt-manager
                 end
                 node.vm.box = conf['box']
