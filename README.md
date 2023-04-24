@@ -87,6 +87,7 @@ vagrant box add ubuntu/focal64
 vagrant mutate ubuntu/focal64 libvirt
 vagrant box remove ubuntu/focal64 --provider=virtualbox
 ```
+But `ubuntu/focal64` not working in libvirt, I replace it with `generic/ubuntu2004`
 
 ------------------------------
 
