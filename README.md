@@ -40,6 +40,10 @@ sudo dnf install virt-manager libvirt-devel libxslt-devel libxml2-devel vagrant 
 
 ## Steps
 
+```
+echo "export VAGRANT_HOME=/run/media/user/HD1/vagrant" >> ~/.bash_profile
+```
+
 Configure your `Vagrantfile` and customize your provision file (sh) in the `provision` folder and run:
 
 ```
