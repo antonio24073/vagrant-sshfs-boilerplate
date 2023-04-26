@@ -40,7 +40,7 @@ sudo dnf install virt-manager libvirt-devel libxslt-devel libxml2-devel vagrant 
 
 ## Steps
 
-Configure your `Vagrantfile` and create your provision file  (sh) in the `provision` folder and run:
+Configure your `Vagrantfile` and customize your provision file (sh) in the `provision` folder and run:
 
 ```
 vagrant up --no-parallel
@@ -61,7 +61,8 @@ sh sshfs.sh -vm=alpine-1 -f=project
 
 It will generate a folder in the VM home folder and another in your host current path (pwd).
 
-To mount a volume in another path, you can do:
+To mount a volume in another path (host), you can do:
+
 ```
 vagrant status
 sh sshfs.sh --virtual-machine=alpine-1 --folder=project --path=/home/user/Documents

@@ -6,6 +6,7 @@ vms = {
     #     'swap' => '0',
     #     'box' => 'generic/alpine317', 
     #     'provision' => 'generic-alpine317.sh',
+    #     'storage' => 'default',
     # },
     # 'centos-7' => {
     #     'qty' => 1, 
@@ -14,6 +15,7 @@ vms = {
     #     'swap' => 2,
     #     'box' => 'centos/7',
     #     'provision' => 'centos-7.sh', 
+    #     'storage' => 'default',
     # }
     # 'almalinux-8' => {
     #     'qty' => 1, 
@@ -22,6 +24,7 @@ vms = {
     #     'swap' => 2,
     #     'box' => 'almalinux/8',
     #     'provision' => 'almalinux-8.sh', 
+    #     'storage' => 'default', 
     # },
     'generic-ubuntu2004' => {
         'qty' => 1, 
@@ -30,9 +33,10 @@ vms = {
         'swap' => 2,
         'box' => 'generic/ubuntu2004',
         'provision' => 'generic-ubuntu2004.sh',
+        # 'storage' => 'default', 
+        'storage' => 'HD1',
     }
 }
-
 vms.each do |name, conf|
     Vagrant.configure("2") do |config|
         # config.env.enable # use plugin vagrant-env to put your credentials
@@ -56,9 +60,8 @@ vms.each do |name, conf|
                     lv.graphics_type = "spice"
                     lv.keymap = "pt-br"
                     lv.machine_arch = "x86_64"
-                    lv.qemu_use_session = false
-                    lv.channel :type => 'unix', :target_name => 'org.qemu.guest_agent.0', :target_type => 'virtio'
-                    # lv.storage_pool_name = "libvirt_storage" # you need create it in virt-manager
+                    # lv.qemu_use_session = false ## it's working fine without this
+                    lv.storage_pool_name = conf['storage']
                 end
                 node.vm.box = conf['box']
                 node.vm.box_check_update = false

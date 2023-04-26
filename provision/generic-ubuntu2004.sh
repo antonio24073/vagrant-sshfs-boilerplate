@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # ini update
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt dist-upgrade -y
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 # end update
 
 # ini install gnome
-sudo DEBIAN_FRONTEND=noninteractive apt install ubuntu-gnome-desktop ubuntu-gnome-default-settings -y
-sudo DEBIAN_FRONTEND=noninteractive apt install lightdm -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get install ubuntu-gnome-desktop ubuntu-gnome-default-settings -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get install lightdm -y
 sudo bash -c "echo '/usr/sbin/lightdm' > /etc/X11/default-display-manager"
 sudo bash -c "echo 'set shared/default-x-display-manager lightdm' | debconf-communicate"
 sudo systemctl start lightdm
