@@ -15,8 +15,6 @@ You can configure it to work with virtualbox in your fork.
 - Almalinux 8
 - Centos 7
 - Ubuntu Focal 20.04
-
-When I have a time I will make a provision to:
 - Alpine 3.17.2
 
 ------------------------------
@@ -117,13 +115,14 @@ vagrant box add ubuntu/focal64
 vagrant mutate ubuntu/focal64 libvirt
 vagrant box remove ubuntu/focal64 --provider=virtualbox
 ```
+
 But `ubuntu/focal64` not working in libvirt, I replaced it with `generic/ubuntu2004`
 
 ------------------------------
 
 Tested with `libvirt` and `virt-manager`
 
-Not tested with `virtualbox`
+Tested with `virtualbox`
 
 ------------------------------
 

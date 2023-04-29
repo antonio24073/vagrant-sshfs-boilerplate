@@ -1,13 +1,13 @@
 vms = {
-    # 'alpine-3-17-2' => {
-    #     'qty' => '2', 
-    #     'memory' => '256', 
-    #     'cpus' => '1',
-    #     'swap' => '0',
-    #     'box' => 'generic/alpine317', 
-    #     'provision' => 'generic-alpine317.sh',
-    #     'storage' => 'default',
-    # },
+    'alpine-3-17-2' => {
+        'qty' => '2', 
+        'memory' => '1', 
+        'cpus' => '1',
+        'swap' => '1',
+        'box' => 'generic/alpine317', 
+        'provision' => 'generic-alpine317.sh',
+        'storage' => 'HD1',
+    },
     # 'centos-7' => {
     #     'qty' => 1, 
     #     'cpus' => 2,
@@ -15,7 +15,7 @@ vms = {
     #     'swap' => 2,
     #     'box' => 'centos/7',
     #     'provision' => 'centos-7.sh', 
-    #     'storage' => 'default',
+    #     'storage' => 'HD1',
     # }
     # 'almalinux-8' => {
     #     'qty' => 1, 
@@ -24,18 +24,17 @@ vms = {
     #     'swap' => 2,
     #     'box' => 'almalinux/8',
     #     'provision' => 'almalinux-8.sh', 
-    #     'storage' => 'default', 
+    #     'storage' => 'HD1', 
     # },
-    'generic-ubuntu2004' => {
-        'qty' => 1, 
-        'cpus' => 2,
-        'memory' => 4,
-        'swap' => 2,
-        'box' => 'generic/ubuntu2004',
-        'provision' => 'generic-ubuntu2004.sh',
-        # 'storage' => 'default', 
-        'storage' => 'HD1',
-    }
+    # 'generic-ubuntu2004' => {
+    #     'qty' => 1, 
+    #     'cpus' => 2,
+    #     'memory' => 4,
+    #     'swap' => 2,
+    #     'box' => 'generic/ubuntu2004',
+    #     'provision' => 'generic-ubuntu2004.sh',
+    #     'storage' => 'HD1',
+    # }
 }
 vms.each do |name, conf|
     Vagrant.configure("2") do |config|
