@@ -85,10 +85,5 @@ swapon /swapfile1
 echo "/swapfile1 none swap sw 0 0" >> /etc/fstab
 # end doing 4gb swap
 
-#ini cpanel installation
-curl -o latest -L https://securedownloads.cpanel.net/latest
-sudo sh latest
-rm latest
-#end cpanel installation
 
 

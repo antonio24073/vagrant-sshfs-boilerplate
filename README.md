@@ -16,6 +16,8 @@ You can configure it to work with virtualbox in your fork.
 - Centos 7
 - Ubuntu Focal 20.04
 - Alpine 3.17.2
+- MacOS Big Sur
+- Windows 11
 
 ------------------------------
 
