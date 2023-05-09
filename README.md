@@ -134,3 +134,13 @@ Tested with `virtualbox`
 
 - [Vagrant WHM CPanel Local](https://github.com/antonio24073/vagrant-whm-cpanel-local)
 
+
+
+
+------------------------------
+
+# Donations
+
+Help keep projects free:
+
+https://www.paypal.com/donate/?business=X3W3QTHS7BDW4&no_recurring=0&item_name=Help+me+to+continue+the+free+projects&currency_code=BRL
